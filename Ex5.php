@@ -1,9 +1,13 @@
 <?php
-
 function main(array $argv){
-    $masse = getInfo($argv,"-m");
-    $taille = getInfo($argv, "-t");
-    echo "Votre IMC est de ".($masse/($taille*$taille)).".";
+    $montant = getInfo($argv, "-m");
+    echo "La somme demandee est: $montant \n";
+    if($montant>100){
+        echo "Retrait refuse\n";
+    }
+    else{
+        echo "Retrait accepte\n";
+    }
 }
 
 function getInfo($argv, $argument){
@@ -16,13 +20,11 @@ function getInfo($argv, $argument){
             if (is_numeric($argv[$i+1])){
                 return $argv[$i+1];
             }
-            echo "Il faut indiquer une valeur numérique après $argument";
+            echo "Il faut indiquer une valeur numérique après $argument\n";
             exit(1);
         }
     }
-        echo "Argument maquant. Argument attendu: $argument";
-        exit(1);
+    echo "Argument maquant. Argument attendu: $argument\n";
+    exit(1);
 }
-
-
 main($argv);

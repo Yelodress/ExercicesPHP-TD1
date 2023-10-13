@@ -1,9 +1,11 @@
 <?php
 
 function main(array $argv){
-    $masse = getInfo($argv,"-m");
-    $taille = getInfo($argv, "-t");
-    echo "Votre IMC est de ".($masse/($taille*$taille)).".";
+    $valeur=getInfo($argv, "-v");
+    while($valeur<0){
+        $valeur=readline("Entrez un valeur positive: ");
+    }
+    echo "Le nombre saisi est $valeur\n";
 }
 
 function getInfo($argv, $argument){
@@ -14,15 +16,14 @@ function getInfo($argv, $argument){
                 exit(1);
             }
             if (is_numeric($argv[$i+1])){
-                return $argv[$i+1];
+                return ($argv[$i+1]);
             }
-            echo "Il faut indiquer une valeur numérique après $argument";
+            echo "Il faut indiquer une valeur numérique après $argument\n";
             exit(1);
         }
     }
-        echo "Argument maquant. Argument attendu: $argument";
-        exit(1);
+    echo "Argument maquant. Argument attendu: $argument\n";
+    exit(1);
 }
-
 
 main($argv);
