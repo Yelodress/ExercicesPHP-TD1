@@ -6,7 +6,7 @@ function main()
     }
     $valMax=max($valeur);
     echo "La valeur max est " . max($valeur) . "\n";
-    echo array_keys($valeur, $valMax)[0]+1;
+    echo "Sa position est ".array_keys($valeur, $valMax)[0]+1 ."\n";
 }
 
 main();
