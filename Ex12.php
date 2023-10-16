@@ -6,7 +6,7 @@ function main()
     // Boucle qui tourne 5 fois pour obtenir les 5 valeurs
     for ($i = 0; $i < 5; $i++) {
         // Demande à l'utilisateur d'entrer un nombre et stocke cette valeur dans le tableau $valeur
-        $valeur[$i] = readline("Entrez un autre nombre");
+        $valeur[$i] = readline("Entrez un nombre");
 
         //tant que l'entrée n'est pas une valeur numérique, re-demander une valeur
         while(!is_numeric($valeur[$i])){
