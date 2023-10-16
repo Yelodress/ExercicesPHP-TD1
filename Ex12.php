@@ -7,6 +7,12 @@ function main()
     for ($i = 0; $i < 5; $i++) {
         // Demande à l'utilisateur d'entrer un nombre et stocke cette valeur dans le tableau $valeur
         $valeur[$i] = readline("Entrez un autre nombre");
+
+        //tant que l'entrée n'est pas une valeur numérique, re-demander une valeur
+        while(!is_numeric($valeur[$i])){
+            echo "Entrez une valeur numérique:\n";
+            $valeur[$i] = readline("Entrez un autre nombre");
+        }
     }
 
     // Trouve le nombre maximum parmi les valeurs entrées
